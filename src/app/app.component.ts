@@ -9,12 +9,14 @@ import { auth } from 'firebase/app';
 })
 export class AppComponent implements OnInit{
   title = 'firebase-apps';
+  user : firebase.User
   constructor( private afAuth: AngularFireAuth
   ){}
   ngOnInit(){
     this.afAuth.authState
     .subscribe( user => {
       console.log(user)
+      this.user = user
     })
 
 

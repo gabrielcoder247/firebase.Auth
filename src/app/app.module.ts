@@ -8,11 +8,14 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './signup/signup.component'; 
+// import { MaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    SignupComponent,
    
   ],
   imports: [
@@ -21,6 +24,7 @@ import { LoginComponent } from './auth/login/login.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    // MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

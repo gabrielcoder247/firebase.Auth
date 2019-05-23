@@ -8,13 +8,23 @@ import {LoginService}  from '../login.service'
 })
 export class LoginComponent implements OnInit {
 
+  user :firebase.User;
   constructor( private service:LoginService) { }
 
   ngOnInit() {
+    this.service.getLoggedInUser()
+    .subscribe( user => {
+      console.log( user );
+      this.user = user
+    })
   }
   loginGoogle(){
     console.log("logged in ...");
     this.service.login();
+  }
+
+  logout(){
+    this.service.logout()
   }
 
 }
